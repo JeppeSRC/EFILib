@@ -1,5 +1,22 @@
 #pragma once
-
+/*
+_______________________________________________ 
+|     UEFI memory types        | Legacy types |
+| EfiReservedMemoryType        |              |
+| EfiRuntimeServicesCode       |              |
+| EfiRuntimeServicesData       |  Reserved    |
+| EfiMemoryMappedIO            |              |
+| EfiMemoryMappedIOPortSpace   |              |
+| EfiPalCode                   |              |
+| EfiUnusableMemory            |  bad memory  |
+| EfiACPIReclaimMemory         | ACPI reclaim |
+| EfiLoaderCode                |              |
+| EfiLoaderData                |              |
+| EfiBootServicesCode          |   Usable     | 
+| EfiBootServicesData          |              |
+| EfiConventionalMemory        |              |
+| EfiACPIMemoryNVS             | ACPI NVS     |
+*/
 //definitions
 #define EFI_SYSTEM_TABLE_SIGNATURE 0x5453595320494249
 #define EFI_2_60_SYSTEM_TABLE_REVISION ((2<<16) | (60))
