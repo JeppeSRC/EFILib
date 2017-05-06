@@ -8366,3 +8366,5 @@ VOID* AllocPool(EFI_MEMORY_TYPE type, UINTN size);
 VOID Free(VOID* address, UINTN pages);
 
 VOID Sleep(UINTN microseconds);
+
+BOOLEAN ExitBootServices(UINTN key);

@@ -275,3 +275,10 @@ VOID Free(VOID* address, UINTN pages) {
 VOID Sleep(UINTN microseconds) {
 	systbl->BootServices->Stall(microseconds);
 }
+
+BOOLEAN ExitBootServices(UINTN key) {
+
+	EFI_STATUS res = systbl->BootServices->ExitBootServices(hndl, key);
+
+	return res == EFI_SUCCESS;
+}
