@@ -280,5 +280,16 @@ BOOLEAN ExitBootServices(UINTN key) {
 
 	EFI_STATUS res = systbl->BootServices->ExitBootServices(hndl, key);
 
-	return res == EFI_SUCCESS;
+	if (res == EFI_SUCCESS) {
+		systbl->BootServices = 0;
+		systbl->ConIn = 0;
+		systbl->ConOut = 0;
+		systbl->ConsoleInHandle = 0;
+		systbl->ConsoleOutHandle = 0;
+		systbl->StandardErrorHandle = 0;
+		systbl->StdErr = 0;
+		return TRUE;
+	}
+
+	return FALSE;
 }
