@@ -277,7 +277,6 @@ VOID Sleep(UINTN microseconds) {
 }
 
 BOOLEAN ExitBootServices(UINTN key) {
-
 	EFI_STATUS res = systbl->BootServices->ExitBootServices(hndl, key);
 
 	if (res == EFI_SUCCESS) {
@@ -290,6 +289,8 @@ BOOLEAN ExitBootServices(UINTN key) {
 		systbl->StdErr = 0;
 		return TRUE;
 	}
+
+	println(L"Exit boot services failed!");
 
 	return FALSE;
 }
