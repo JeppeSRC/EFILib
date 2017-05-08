@@ -234,7 +234,7 @@ UINTN vsprintf(CHAR16* buffer, UINTN bufferSize, CONST CHAR16* format, va_list l
 				case 's':
 				{
 					CHAR16* string = va_arg(list, CHAR16*);
-					UINTN len = strlen(string);
+					UINTN len = strlen(string)-1;
 
 					memcpy(buffer + printed, string, len * sizeof(CHAR16));
 					printed += len;
