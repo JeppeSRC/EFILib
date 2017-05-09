@@ -74,6 +74,17 @@ VOID* memcpy(VOID* dest, CONST VOID* src, UINTN size) {
 	return dest;
 }
 
+#pragma function(memcmp)
+INT32 memcmp(CONST VOID* dest, CONST VOID* src, UINTN size) {
+	for (UINTN i = 0; i < size; i++) {
+		if (((CONST CHAR8*)dest)[i] != ((CONST CHAR8*)src)[i]) {
+			return i;
+		}
+	}
+
+	return size;
+}
+
 BOOLEAN InitializeLib(EFI_HANDLE* handle, EFI_SYSTEM_TABLE* systemTable) {
 	hndl = handle;
 	systbl = systemTable;

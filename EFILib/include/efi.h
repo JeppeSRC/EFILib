@@ -8349,6 +8349,9 @@ extern VOID* __cdecl memset(VOID* dest, INT32 v, UINTN size);
 extern VOID* __cdecl memcpy(VOID* dest, CONST VOID* src, UINTN size);
 #pragma intrinsic(memcpy)
 
+extern INT32 memcmp(CONST VOID* dest, CONST VOID* src, UINTN size);
+#pragma intrinsic(memcmp)
+
 UINTN strlen(CONST CHAR16* string);
 #pragma intrinsic(strlen)
 
